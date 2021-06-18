@@ -16,8 +16,8 @@ app.get((req, res, next) => {
   res.status(200).json({ping: "pong"})
 })
 
-app.listen(process.env.PORT || 3000)
-
+const port = 3000
+app.set(port, process.env.PORT || 3000);
 app.listen(port, ()=> {
   console.log(`🚀 Server listening on port ` + port)
 })
